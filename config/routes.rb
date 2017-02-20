@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 	get '/login' => 'sessions#new'
 	post 'login' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'
-	resources :users, only: [:new, :create, :show]
+	# get '/secure' => 'apps#secure'
+	# post '/secure' => 'apps#secured'
+	resources :users, only: [:new, :create, :show, :destroy]
 end

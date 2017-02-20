@@ -2,3 +2,6 @@
 
 <h3> username : <%= @user.username %> </h3>
 <h3> email : <%= @user.email %> </h3>
+
+
+<h4> <%= link_to 'deactivate', user_path(@user), method: :delete, data: { confirm: ' do you really want to DEACTIVATE your account ?' } %> </h4>
