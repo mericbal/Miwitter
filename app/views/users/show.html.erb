@@ -9,7 +9,8 @@
 
 	<div class="content" id="tweets">
 		<% @tweets.each do |t| %>
-			<li> <%= t.body %> </li>
+				<h3> <li> ID= <%= t.id %> | <%= t.body %> </li> </h3>
+				<%= t.likes.count %> like(s)	
 		<% end %>
 	</div>
 
