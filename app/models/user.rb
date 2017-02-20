@@ -3,6 +3,8 @@ class User < ApplicationRecord
 	has_many :tweets
 	has_many :likes
 	has_many :liked_tweets, through: :likes, source: :tweet
+	has_many :dislikes
+	has_many :disliked_tweets, through: :dislikes, source: :tweet
 	
 	validates :username, :email, presence: true
 	validates :username, :email, uniqueness: true
