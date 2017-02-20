@@ -127,7 +127,7 @@ li a:hover:not(.active) {
   font-family: Helvetica, Arial, sans-serif;
   text-decoration: none;
 }
-.tabs li.active {
+.tabs li.aktif {
   /*border: 1px solid black;*/
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -139,7 +139,7 @@ li a:hover:not(.active) {
   height: 31px;
   padding: 9px 14px;
 }
-.tabs li.active a {
+.tabs li.aktif a {
   color: red;
   text-decoration: none;
   border-bottom: none;
