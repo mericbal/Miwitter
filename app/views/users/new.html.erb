@@ -2,3 +2,10 @@
 
 <%= render 'user_form' %>
 
+<% if @errors %>
+	<% @errors.each do |e| %>
+		<li> <%= e %> </li>
+	<% end %>
+<% end %>
+
+<%= link_to 'already signed up ? click here', login_path %>
