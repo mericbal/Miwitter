@@ -8,6 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <div id="menubar">
+  	<ul>
+  		<li> <%= link_to 'home', '/' %> </li>
+  		<li> <%= link_to 'login' %> </li>
+  		<li> <%= link_to 'sign up' %> </li>
+  	</ul>
+  </div>
+
   <body>
     <%= yield %>
   </body>
