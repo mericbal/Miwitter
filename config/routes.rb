@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 	get '/logout' => 'sessions#destroy'
 	# get '/secure' => 'apps#secure'
 	# post '/secure' => 'apps#secured'
-	resources :users, only: [:new, :create, :show]
+	resources :users, only: [:new, :create, :show, :destroy]
 end
