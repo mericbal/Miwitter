@@ -17,14 +17,13 @@
 
 $(document).on('turbolinks:load', function () {
   $('#profile').show();  // or // $('#integrity').css("display", "block")
-  // $('.active').show();
-
+  
   $('.tabs li').on('click', function (e) {
   	e.preventDefault();
 
     var selected = this
-    $('.tabs li').removeClass('active')
-    $(selected).addClass('active')
+    $('.tabs li').removeClass('aktif')
+    $(selected).addClass('aktif')
 
     var id = selected.children[0].getAttribute('href')
     $('.content').hide()
