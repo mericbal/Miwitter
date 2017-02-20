@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+	
 	include SessionsHelper
 	
 	def new
@@ -10,10 +10,9 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			login(@user)
-			redirect_to '/'
-			# redirect_to user_path(@user)
+			redirect_to user_path(@user)
 		else
-			errors = @user.errors.full_messages
+			@errors = @user.errors.full_messages
 			render :new
 		end
 	end
@@ -22,9 +21,10 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
-	private
+	private 
 
 	def user_params
 		params.require(:user).permit(:username, :email, :password)
 	end
+
 end

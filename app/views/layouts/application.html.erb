@@ -12,7 +12,10 @@
   	<ul>
   		<li> <%= link_to 'home', '/' %> </li>
   		<li> <%= link_to 'sign up', new_user_path %> </li>
-  		<li> <%= link_to 'login' %> </li>
+  		<li> <%= link_to 'login', login_path %> </li>
+  		<% if current_user %>
+  		<li> <%= link_to 'logout', logout_path %> </li>
+  		<% end %>
   	</ul>
   </div>
 
