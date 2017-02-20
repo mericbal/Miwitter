@@ -12,3 +12,7 @@ end
 10.times do
 	Tweet.create(body: Faker::Lorem.sentence, user_id: 3)
 end
+
+#
+puts 'Seed complete !'
+#

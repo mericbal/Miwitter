@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	has_secure_password
-	has_mant :tweets
+	has_many :tweets
 	
 	validates :username, :email, presence: true
 	validates :username, :email, uniqueness: true
