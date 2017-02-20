@@ -10,9 +10,12 @@
 
   <div id="menubar">
   	<ul>
-  		<li> <%= link_to 'home', '/' %> </li>
+  		<% if current_user == nil %>
   		<li> <%= link_to 'sign up', new_user_path %> </li>
   		<li> <%= link_to 'login', login_path %> </li>
+  		<% else %>
+  		<li> <%= link_to 'home', '/' %> </li>
+  		<% end %>
   	</ul>
   </div>
 
@@ -22,6 +25,7 @@
 				  <button class="button"> <%= current_user.username %> </button>
 				  <div class="dropdown-content">
 						<%= link_to 'logout', logout_path %>
+						<%= link_to 'profile', user_path(current_user) %>
 			  	</div>
   </div>
 	<% end %>
