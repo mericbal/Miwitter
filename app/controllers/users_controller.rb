@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	
+	before_action :set_user, only: [:show, :destroy]
+
 	include SessionsHelper
 	
 	def new
@@ -18,11 +19,10 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@tweets = @user.tweets
 	end
 
 	def destroy
-		@user = User.find(params[:id])
 		logout
 		@user.destroy
 		redirect_to '/'
@@ -30,6 +30,10 @@ class UsersController < ApplicationController
 
 
 	private 
+
+	def set_user
+		@user = User.find(params[:id])
+	end
 
 	def user_params
 		params.require(:user).permit(:username, :email, :password)

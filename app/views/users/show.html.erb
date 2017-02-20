@@ -1,7 +1,26 @@
-<h2> <%= @user.username %>'s profile </h2>
-
-<h3> username : <%= @user.username %> </h3>
-<h3> email : <%= @user.email %> </h3>
-
+<h4> <%= link_to 'your tweets', user_tweets_path(@user) %> </h4>
 
 <h4> <%= link_to 'deactivate', user_path(@user), method: :delete, data: { confirm: ' do you really want to DEACTIVATE your account ?' } %> </h4>
+
+
+
+<div class="container">
+	<ul class='tabs'>
+		<li class='active'> <%= link_to 'profile', '#profile' %> </li>
+		<li> <%= link_to 'tweets', '#tweets' %> </li>
+	</ul>
+
+
+	<div class="content" id="tweets">
+		<% @tweets.each do |t| %>
+			<li> <%= t.body %>
+		<% end %>
+	</div>
+
+	<div class="content" id='profile'>
+		<h2> <%= @user.username %>'s profile </h2>
+		<h3> username : <%= @user.username %> </h3>
+		<h3> email : <%= @user.email %> </h3>
+		<h4> Your tweets <%= @tweets.count %> </h4>
+	</div>
+</div> <!-- container -->
