@@ -40,6 +40,13 @@ end
 p 'Added Likes and Dislikes !'
 #
 
+Follow.create(follower_id: 1, followed_user_id: 2)
+Follow.create(follower_id: 1, followed_user_id: 3)
+
+Follow.create(follower_id: 3, followed_user_id: 2)
+
+puts 'Follow added !'
+
 
 #
 puts 'Seed complete !'
