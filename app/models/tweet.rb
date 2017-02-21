@@ -6,7 +6,7 @@ class Tweet < ApplicationRecord
 	has_many :disliked_users, through: :dislikes, source: :user
 
 	def since?
-    ((Time.now - created_at) / 3600).round # hours ago
+    ((Time.now - created_at)/3600).round # hours ago
   end
 
 end

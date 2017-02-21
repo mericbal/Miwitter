@@ -15,7 +15,7 @@
 	<% else %>
 		<% @tweets.each do |t| %>
 				<h3> <li> ID= <%= t.id %> | <%= t.body %> </li> </h3>
-				<%= t.likes.count %> like(s) \ <%= t.dislikes.count %> dislike(s)
+				<%= t.likes.count %> like(s) \ <%= t.dislikes.count %> dislike(s) \ <%= t.since? %> hours ago 
 		<% end %>
 	<% end %>
 	</div>
