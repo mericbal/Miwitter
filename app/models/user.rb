@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_secure_password
+	include FollowsHelper
 	
 	# tweets
 	has_many :tweets
@@ -17,7 +18,7 @@ class User < ApplicationRecord
 	#validations
 	validates :username, :email, presence: true
 	validates :username, :email, uniqueness: true
-	validates :password, length: { minimum: 3, too_short: ' has to be more than %{count} characters. ' }
+	# validates :password#, length: { minimum: 3, too_short: ' has to be more than %{count} characters. ' }
 
 	def full_info
 		'username=' + self.username.to_s + ' email=' + self.email.to_s + ' pass=' + self.password_digest.to_s
