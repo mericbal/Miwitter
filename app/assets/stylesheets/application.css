@@ -19,8 +19,8 @@ body {
 	padding-left: 160px;
 	margin: 0;
 }
-
 ul#menubar-list {
+  border: 1px solid green;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -32,21 +32,19 @@ ul#menubar-list {
   height: 30%;
   overflow: auto;
 }
-
 li a.left-links {
+  border-bottom: 1px solid green;
   display: block;
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
 }
-
 li a.active {
   background-color: #4CAF50;
 	color: white;
 }
-
 li a:hover:not(.active) {
-  background-color: #555;
+  background-color: #4CAF50;
   color: white;
 }
 
@@ -60,12 +58,10 @@ li a:hover:not(.active) {
   border: none;
   cursor: pointer;
 }
-
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   position: fixed;
@@ -75,27 +71,25 @@ li a:hover:not(.active) {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 #menu-user {
 	position: fixed;
 	top: 10px;
 	right: 10px;
 	float: right;
 }
-
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
+.dropdown-content a:hover {
+  background-color: darkgray;
+  color: white;
+}
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .dropdown:hover .button {
   background-color: #3e8e41;
 }
@@ -128,6 +122,7 @@ li a:hover:not(.active) {
   text-decoration: none;
 }
 .tabs li.aktif {
+  background-color: #4CAF50;
   /*border: 1px solid black;*/
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -140,7 +135,7 @@ li a:hover:not(.active) {
   padding: 9px 14px;
 }
 .tabs li.aktif a {
-  color: red;
+  color: white;
   text-decoration: none;
   border-bottom: none;
 }

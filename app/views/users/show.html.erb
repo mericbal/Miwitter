@@ -10,10 +10,14 @@
 	</ul>
 
 	<div class="content" id="tweets">
+	<% if @tweets.empty? %>
+		You haven't tweeted yet .
+	<% else %>
 		<% @tweets.each do |t| %>
 				<h3> <li> ID= <%= t.id %> | <%= t.body %> </li> </h3>
-				<%= t.likes.count %> like(s) \ <%= t.dislikes.count %> dislike(s)
+				<%= t.likes.count %> like(s) \ <%= t.dislikes.count %> dislike(s) \ <%= t.since? %> hours ago 
 		<% end %>
+	<% end %>
 	</div>
 
 	<div class="content" id='profile'>
@@ -30,7 +34,7 @@
 	<div class="content" id="followers">
 		<%= @user.follows.count %> people are following you 
 		<% @user.follows.each do |f| %>
-			<li> <%= f %> </li>
+			<li> user = <%= User.find(f.followed_user_id).username %> </li>
 		<% end %>
 	</div>
 

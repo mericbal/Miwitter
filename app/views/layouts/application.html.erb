@@ -24,8 +24,8 @@
   <div id='menu-user', class="dropdown">
 				  <button class="button"> <%= current_user.username %> </button>
 				  <div class="dropdown-content">
-						<%= link_to 'logout', logout_path %>
 						<%= link_to 'profile', user_path(current_user) %>
+            <%= link_to 'logout', logout_path %>
 			  	</div>
   </div>
 	<% end %>
