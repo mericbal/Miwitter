@@ -1,6 +1,13 @@
-<h2> <%= @user.username %> ' s profile </h2>
-<!-- <h2> <%= button_tag 'new but tweet', { href: '/' } %> </h2> -->
-<h3> <%= link_to 'new tweet', new_user_tweet_path(@user) %> </h3>
+<!-- <h2> <%= @user.username %> ' s profile </h2> -->
+
+<div id="new_tweet">
+	new tweet
+</div>
+<div id="slide">
+	<div id="form-tweet">
+		<%= render 'tweets/tweet_form' %>
+	</div>
+</div>
 
 <div class="container">
 	<ul class='tabs'>
