@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@tweets = @user.tweets
+		@tweets = @user.tweets.order(created_at: :desc)
 	end
 
 	def destroy

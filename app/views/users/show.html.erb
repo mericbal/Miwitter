@@ -2,11 +2,11 @@
 
 <div class="container">
 	<ul class='tabs'>
-		<li class='aktif'> <%= link_to 'profile', '#profile' %> </li>
-		<li> <%= link_to 'your tweets', '#tweets' %> </li>
-		<li> <%= link_to 'followers', '#followers' %> </li>
-		<li> <%= link_to 'following', '#following' %> </li>
-		<li> <%= link_to 'account information', '#information' %></li>
+		<li> <%= button_tag 'profile', { href: '#profile' } %> </li>
+		<li class='aktif'> <%= button_tag 'your tweets', { href: '#tweets' } %> </li>
+		<li> <%= button_tag 'followers', { href: '#followers' } %> </li>
+		<li> <%= button_tag 'following', { href: '#following' } %> </li>
+		<li> <%= button_tag 'account information', { href: '#information' } %> </li>
 	</ul>
 
 	<div class="content" id="tweets">
@@ -14,11 +14,7 @@
 	<% if @tweets.empty? %>
 		You haven't tweeted yet .
 	<% else %>
-		<% @tweets.each do |t| %>
-				<h3> <li> ID= <%= t.id %> | <%= t.body %> </li> </h3>
-				<%= t.likes.count %> like(s) \ <%= t.dislikes.count %> dislike(s) \ <%= t.since? %> hours ago <br>
-				<%= link_to 'delete tweet', user_tweet_path(@user.id, t), method: :delete %>
-		<% end %>
+		<%= render 'tweets/tweets' %>
 	<% end %>
 	</div>
 
