@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@tweet = Tweet.new
 		@tweets = @user.tweets.order(created_at: :desc)
 	end
 

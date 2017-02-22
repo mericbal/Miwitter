@@ -29,10 +29,11 @@ $(document).on('turbolinks:load', function () {
     $('.content').hide()
     $(id).show()
   })
+});
 
-  $('#new_tweet').on('click', function() {
-  })
-
-
-
+$(document).on('turbolinks:load', function () {
+  $('#slide').hide()
+  $('#new_tweet').click(function(){
+      $('#slide').slideToggle(400)
+  });
 });
