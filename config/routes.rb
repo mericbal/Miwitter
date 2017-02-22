@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 	# get '/secure' => 'apps#secure'
 	# post '/secure' => 'apps#secured'
 	resources :users, only: [:new, :create, :show, :destroy] do 
-		resources :tweets, only: [:new, :create]#, :destroy]
+		resources :tweets, only: [:new, :create, :destroy]
 	end
 
 end
