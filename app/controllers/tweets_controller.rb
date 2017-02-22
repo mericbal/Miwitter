@@ -1,5 +1,8 @@
 class TweetsController < ApplicationController
 	before_action :set_user, only: [:new, :create]
+
+	# include SessionsHelper
+
 	def index
 		# @tweets = @user.tweets
 	end
@@ -10,8 +13,10 @@ class TweetsController < ApplicationController
 
 	def create
 		@tweet = Tweet.new(tweet_params)
+		@tweet.user_id = @user.id
 		if @tweet.save
 			@user.tweets << @tweet
+			redirect_to user_path(@user)
 		else
 			render :new
 		end

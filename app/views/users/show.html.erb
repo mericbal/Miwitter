@@ -10,6 +10,7 @@
 	</ul>
 
 	<div class="content" id="tweets">
+	<h2> <%= link_to 'new tweet', new_user_tweet_path(@user) %> </h2>
 	<% if @tweets.empty? %>
 		You haven't tweeted yet .
 	<% else %>
@@ -18,7 +19,6 @@
 				<%= t.likes.count %> like(s) \ <%= t.dislikes.count %> dislike(s) \ <%= t.since? %> hours ago 
 		<% end %>
 	<% end %>
-	<%= link_to 'new tweet', new_user_tweet_path(@user) %>
 	</div>
 
 	<div class="content" id='profile'>
