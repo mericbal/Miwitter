@@ -5,9 +5,11 @@
 <h3> Here are some cool recent hashtags </h3>
 
 <% a.each_with_index do |x,i| %>
-	<% if i%2==1 %>	
+	<% if i%3==2 %>	
 		<li id="green"> <%= x %> </li>
+	<% elsif i%3==1 %>
+		<li id="red"> <%= x %> </li>
 	<% else %>
-		<li> <%= x %> </li>
+		<li id="blue"> <%= x %> </li>
 	<% end %>
 <% end %>
