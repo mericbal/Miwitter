@@ -16,7 +16,8 @@
 	<% else %>
 		<% @tweets.each do |t| %>
 				<h3> <li> ID= <%= t.id %> | <%= t.body %> </li> </h3>
-				<%= t.likes.count %> like(s) \ <%= t.dislikes.count %> dislike(s) \ <%= t.since? %> hours ago 
+				<%= t.likes.count %> like(s) \ <%= t.dislikes.count %> dislike(s) \ <%= t.since? %> hours ago <br>
+				<%= link_to 'delete tweet', user_tweet_path(@user.id, t), method: :delete %>
 		<% end %>
 	<% end %>
 	</div>
