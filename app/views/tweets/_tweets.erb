@@ -5,14 +5,14 @@
 <% @tweets.each do |t| %>
 <ul>
   <li class="tweet">
-    <img class="avatar" src="https://pbs.twimg.com/profile_images/2858734172/db7da718fd369eba6184973631d7d84a_bigger.jpeg" alt="">
+    <span> <%= image_tag("https://pbs.twimg.com/profile_images/2858734172/db7da718fd369eba6184973631d7d84a_bigger.jpeg") %> </span>
     <span id="red"> > tweet id: <%= t.id %> </span>
     <span> <%= link_to 'delete tweet', user_tweet_path(@user.id, t), method: :delete %> </span> 
-    <span id="red" class="timestamp"> <%= t.since? %> hours ago </span>
     
     <div class="tweet-content">
       <p id="green"> <%= t.body %> </p>
-      <p id="blue"> <%= t.likes.count %> likes ||| <%= t.dislikes.count %> dislikes </p>
+      <p id="blue"> <%= t.likes.count %> likes ||| <%= t.dislikes.count %> dislikes
+      <span id="red"> <%= t.since? %> hours ago </span> </p>
     </div>
   </li>
 </ul>
