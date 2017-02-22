@@ -6,15 +6,13 @@
 <ul>
   <li class="tweet">
     <img class="avatar" src="https://pbs.twimg.com/profile_images/2858734172/db7da718fd369eba6184973631d7d84a_bigger.jpeg" alt="">
+    <span id="red"> > tweet id: <%= t.id %> </span>
+    <span> <%= link_to 'delete tweet', user_tweet_path(@user.id, t), method: :delete %> </span> 
+    <span id="red" class="timestamp"> <%= t.since? %> hours ago </span>
+    
     <div class="tweet-content">
-      <p>
-        <span> tweet id : <%= t.id %> </span>
-        <span class="full-name"> <%= @user.username %> </span>
-        <span class="timestamp"> <%= t.since? %> </span>
-        <span> <%= link_to 'delete tweet', user_tweet_path(@user.id, t), method: :delete %> </span>
-      </p>
-      <p> <%= t.body %> </p>
-      <p> <%= t.likes.count %> likes ||| <%= t.dislikes.count %> dislikes </p>
+      <p id="green"> <%= t.body %> </p>
+      <p id="blue"> <%= t.likes.count %> likes ||| <%= t.dislikes.count %> dislikes </p>
     </div>
   </li>
 </ul>

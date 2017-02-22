@@ -14,6 +14,9 @@
  *= require_self
  */
 
+#green { color: #4CAF50 }
+#red { color: red }
+#blue { color: blue }
 /* slide */
 #new_tweet {
   width: 15%;

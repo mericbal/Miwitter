@@ -1,9 +1,8 @@
 <div id="form-tweet">
 	<%= form_for [current_user, @tweet] do |f| %>
 
-		<%= f.label :body %>
 		<%= f.text_area :body, { placeholder: 'tweet' } %>
 
-		<%= f.submit %>
+		<%= f.submit 'tweet me' %>
 	<% end %>
 </div>

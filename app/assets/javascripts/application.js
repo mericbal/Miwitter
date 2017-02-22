@@ -34,6 +34,6 @@ $(document).on('turbolinks:load', function () {
 $(document).on('turbolinks:load', function () {
   $('#slide').hide()
   $('#new_tweet').click(function(){
-      $('#slide').slideToggle(400)
+      $('#slide').slideToggle(300)
   });
 });
