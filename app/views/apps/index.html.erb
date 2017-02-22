@@ -1,7 +1,13 @@
-<h2> home </h2>
+<h2> Welcome to Miwitter </h2>
 
-<h3> Welcome to Miwitter </h3>
+<% a = %w( #cars #instagram #twitterclone #icerdemiyiz #beautiful #valentinesday #edho #berkergeldi #parayok #siyaset #politics #sims4 #fallout4 #healtylife #lifestyle #software #frontend #backend #developer #devlife ) %>
 
-<% 50.times do |k| %>
-	<li> <%= k %> </li>
+<h3> Here are some cool recent hashtags </h3>
+
+<% a.each_with_index do |x,i| %>
+	<% if i%2==1 %>	
+		<li id="green"> <%= x %> </li>
+	<% else %>
+		<li> <%= x %> </li>
+	<% end %>
 <% end %>

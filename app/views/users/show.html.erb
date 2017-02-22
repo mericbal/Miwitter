@@ -12,10 +12,10 @@
 <div class="container">
 	<ul class='tabs'>
 		<li> <%= button_tag 'profile', { href: '#profile' } %> </li>
-		<li class='aktif'> <%= button_tag 'your tweets', { href: '#tweets' } %> </li>
-		<li> <%= button_tag 'followers', { href: '#followers' } %> </li>
-		<li> <%= button_tag 'following', { href: '#following' } %> </li>
-		<li> <%= button_tag 'account information', { href: '#information' } %> </li>
+		<li class='aktif'> <%= button_tag 'your tweets', { href: '#tweets', id: 'green' } %> </li>
+		<li> <%= button_tag 'followers', { href: '#followers', id: 'blue' } %> </li>
+		<li> <%= button_tag 'following', { href: '#following', id: 'blue' } %> </li>
+		<li> <%= button_tag 'account information', { href: '#information', id: 'red' } %> </li>
 	</ul>
 
 	<div class="content" id="tweets">
@@ -49,7 +49,7 @@
 		<h3> username : <%= @user.username %> </h3>
 		<h3> email : <%= @user.email %> </h3>
 		<h4> signed up <%= time_ago_in_words(@user.created_at) %> ago </h4>
-		<h4> <%= link_to 'deactivate', user_path(@user), method: :delete, data: { confirm: ' do you really want to DEACTIVATE your account ?' } %> </h4>
+		<h4> <%= link_to 'deactivate', user_path(@user), method: :delete, data: { confirm: ' do you really want to DEACTIVATE your account ?' }%> </h4>
 	</div>
 
 </div> <!-- container -->
