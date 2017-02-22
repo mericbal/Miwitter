@@ -13,6 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+/* slide */
+#new_tweet {
+  width: 15%;
+  padding: 4px;
+  text-align: center;
+  background-color: #4CAF50;
+  /*border: solid 2px black;*/
+}
+#slide {
+  /*width: 30%;*/
+  /*background-color: #4CAF50;*/
+
+}
+/* slide */
+
 h2{ color: green }
 
 body {
