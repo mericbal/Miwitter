@@ -1,4 +1,6 @@
 <h2> <%= @user.username %> ' s profile </h2>
+<!-- <h2> <%= button_tag 'new but tweet', { href: '/' } %> </h2> -->
+<h3> <%= link_to 'new tweet', new_user_tweet_path(@user) %> </h3>
 
 <div class="container">
 	<ul class='tabs'>
@@ -10,7 +12,6 @@
 	</ul>
 
 	<div class="content" id="tweets">
-	<h2> <%= link_to 'new tweet', new_user_tweet_path(@user) %> </h2>
 	<% if @tweets.empty? %>
 		You haven't tweeted yet .
 	<% else %>
