@@ -11,7 +11,9 @@ class TweetsController < ApplicationController
 	def create
 		@tweet = Tweet.new(tweet_params)
 		if @tweet.save
+			@user.tweets << @tweet
 		else
+			render :new
 		end
 	end
 
