@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+h2{ color: green }
 
 body {
 	padding-top: 10px;

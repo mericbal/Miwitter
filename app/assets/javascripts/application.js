@@ -29,4 +29,10 @@ $(document).on('turbolinks:load', function () {
     $('.content').hide()
     $(id).show()
   })
+
+  $('#new_tweet').on('click', function() {
+  })
+
+
+
 });
