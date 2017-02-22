@@ -2,11 +2,11 @@
 
 <div class="container">
 	<ul class='tabs'>
-		<li class='aktif'> <%= link_to 'profile', '#profile' %> </li>
-		<li> <%= link_to 'your tweets', '#tweets' %> </li>
-		<li> <%= link_to 'followers', '#followers' %> </li>
-		<li> <%= link_to 'following', '#following' %> </li>
-		<li> <%= link_to 'account information', '#information' %></li>
+		<li> <%= button_tag 'profile', { href: '#profile' } %> </li>
+		<li class='aktif'> <%= button_tag 'your tweets', { href: '#tweets' } %> </li>
+		<li> <%= button_tag 'followers', { href: '#followers' } %> </li>
+		<li> <%= button_tag 'following', { href: '#following' } %> </li>
+		<li> <%= button_tag 'account information', { href: '#information' } %> </li>
 	</ul>
 
 	<div class="content" id="tweets">
@@ -14,7 +14,7 @@
 	<% if @tweets.empty? %>
 		You haven't tweeted yet .
 	<% else %>
-		<%= render 'tweets' %>
+		<%= render 'tweets/tweets' %>
 	<% end %>
 	</div>
 

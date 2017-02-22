@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
-  $('#profile').show();  // or // $('#integrity').css("display", "block")
+  $('#tweets').show();  // or // $('#integrity').css("display", "block")
   
   $('.tabs li').on('click', function (e) {
   	e.preventDefault();
