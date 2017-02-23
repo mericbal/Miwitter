@@ -1,0 +1,11 @@
+<h2> recent hashtags </h2>
+
+<% @hashtags.each_with_index do |x,i| %>
+	<% if i%3==2 %>	
+		<li id="green"> <%= x.name %> </li>
+	<% elsif i%3==1 %>
+		<li id="red"> <%= x.name %> </li>
+	<% else %>
+		<li id="blue"> <%= x.name %> </li>
+	<% end %>
+<% end %>
