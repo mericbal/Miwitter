@@ -50,7 +50,13 @@ Follow.create(follower_id: 1, followed_user_id: 3)
 
 Follow.create(follower_id: 3, followed_user_id: 2)
 
-puts 'Follow added !'
+puts 'Follows added !'
+
+a = %w( #cars #instagram #twitterclone #icerdemiyiz #beautiful #valentinesday #edho #berkergeldi #parayok #siyaset #politics #sims4 #fallout4 #healtylife #lifestyle #software #frontend #backend #developer #devlife )
+a.each do |x|
+	Hashtag.create(name: x)
+end
+puts 'Hashtags added !'
 
 
 #

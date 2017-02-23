@@ -10,15 +10,15 @@
 
   <div id="menubar">
   	<ul id='menubar-list'>
-  		<% if current_user == nil %>
-  		<li> <%= link_to 'sign up', new_user_path, class: 'left-links' %> </li>
-  		<li> <%= link_to 'login', login_path, class: 'left-links' %> </li>
-  		<% else %>
-  		<li> <%= link_to 'home', '/', class: 'left-links' %> </li>
-  		<% end %>
-  	</ul>
+      <% if current_user == nil %>
+      <li> <%= link_to 'sign up', new_user_path, class: 'left-links' %> </li>
+      <li> <%= link_to 'login', login_path, class: 'left-links' %> </li>
+      <% else %>
+      <li> <%= link_to 'home', '/', class: 'left-links' %> </li>
+      <% end %>
+      <li> <%= link_to 'hashtags', class: 'left-links' %> </li>
+    </ul>
   </div>
-
 
 	<% if current_user %>
   <div id='menu-user', class="dropdown">
