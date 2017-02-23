@@ -1,15 +1,1 @@
 <h2> Welcome to Miwitter </h2>
-
-<% a = %w( #cars #instagram #twitterclone #icerdemiyiz #beautiful #valentinesday #edho #berkergeldi #parayok #siyaset #politics #sims4 #fallout4 #healtylife #lifestyle #software #frontend #backend #developer #devlife ) %>
-
-<h3> Here are some cool recent hashtags </h3>
-
-<% a.each_with_index do |x,i| %>
-	<% if i%3==2 %>	
-		<li id="green"> <%= x %> </li>
-	<% elsif i%3==1 %>
-		<li id="red"> <%= x %> </li>
-	<% else %>
-		<li id="blue"> <%= x %> </li>
-	<% end %>
-<% end %>
