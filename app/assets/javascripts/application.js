@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function () {
   $('#tweets').show();  // or // $('#integrity').css("display", "block")
   
   $('.tabs li').on('click', function (e) {
-  	e.preventDefault();
+    e.preventDefault();
 
     var selected = this
     $('.tabs li').removeClass('aktif')
