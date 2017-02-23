@@ -1,5 +1,14 @@
 <h2> recent hashtags </h2>
 
+<div id="new_hashtag">
+	new hashtag
+</div>
+<div id="slide_2">
+	<div id="form-hashtag">
+		<%= render 'hashtags/hashtag_form' %>
+	</div>
+</div>
+
 <% @hashtags.each_with_index do |x,i| %>
 	<% if i%3==2 %>	
 		<li id="green"> <%= link_to x.name, hashtag_path(x) %> </li>
