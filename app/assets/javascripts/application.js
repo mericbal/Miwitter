@@ -37,3 +37,13 @@ $(document).on('turbolinks:load', function () {
       $('#slide').slideToggle(300)
   });
 });
+
+$(document).on('turbolinks:load', function () {
+  $('#slide_2').hide()
+  $('#new_hashtag').click(function(){
+      $('#slide_2').slideToggle(300)
+  });
+});
+
+
+// 

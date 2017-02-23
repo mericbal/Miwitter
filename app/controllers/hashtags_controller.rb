@@ -1,6 +1,7 @@
 class HashtagsController < ApplicationController
 
 	def index
+		@hashtag = Hashtag.new()
 		@hashtags = Hashtag.all.order(name: :asc)
 	end
 
@@ -13,12 +14,18 @@ class HashtagsController < ApplicationController
 	end
 
 	def create
-		@hashtag = Hashtag.new(params[:name])
+		@hashtag = Hashtag.new(hashtag_params)
 		if @hashtag.save
 			redirect_to hashtag_path(@hashtag)
 		else
 			render :new
 		end
+	end
+
+	private
+
+	def hashtag_params
+		params.require(:hashtag).permit(:name)
 	end
 
 end
