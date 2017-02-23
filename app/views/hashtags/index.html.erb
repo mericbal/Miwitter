@@ -2,10 +2,10 @@
 
 <% @hashtags.each_with_index do |x,i| %>
 	<% if i%3==2 %>	
-		<li id="green"> <%= x.name %> </li>
+		<li id="green"> <%= link_to x.name, hashtag_path(x) %> </li>
 	<% elsif i%3==1 %>
-		<li id="red"> <%= x.name %> </li>
+		<li id="red"> <%= link_to x.name, hashtag_path(x) %> </li>
 	<% else %>
-		<li id="blue"> <%= x.name %> </li>
+		<li id="blue"> <%= link_to x.name, hashtag_path(x) %> </li>
 	<% end %>
 <% end %>
