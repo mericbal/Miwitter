@@ -18,7 +18,7 @@
 #red { color: red }
 #blue { color: blue }
 /* slide */
-#new_tweet {
+#new_tweet, #new_hashtag {
   width: 15%;
   padding: 4px;
   text-align: center;

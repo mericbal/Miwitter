@@ -1,5 +1,3 @@
-<h2> recent hashtags </h2>
-
 <div id="new_hashtag">
 	new hashtag
 </div>
@@ -8,6 +6,8 @@
 		<%= render 'hashtags/hashtag_form' %>
 	</div>
 </div>
+
+<h2> recent hashtags </h2>
 
 <% @hashtags.each_with_index do |x,i| %>
 	<% if i%3==2 %>	
