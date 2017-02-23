@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 	resources :users, only: [:new, :create, :show, :destroy] do 
 		resources :tweets, only: [:new, :create, :destroy]
 	end
-	resources :hashtags, only: [:index]
+	resources :hashtags, only: [:index, :show]
 
 end
