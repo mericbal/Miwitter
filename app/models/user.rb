@@ -18,6 +18,7 @@ class User < ApplicationRecord
 	#validations
 	validates :username, :email, presence: true
 	validates :username, :email, uniqueness: true
+	validates :username, length: {minimum: 3, too_short: 'has to be more than %{count} characters.'}
 	# validates :password#, length: { minimum: 3, too_short: ' has to be more than %{count} characters. ' }
 
 	def full_info

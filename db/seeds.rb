@@ -1,13 +1,18 @@
+# validations
+# username has to be more than 3 
+
 User.destroy_all
 Tweet.destroy_all
 Like.destroy_all
+Dislike.destroy_all
+Follow.destroy_all
 #
 puts 'Destroyed all tables !'
 #
 
-User.create(username: 'a', email: 'a', password: 'aaa')
-User.create(username: 'b', email: 'b', password: 'bbb')
-User.create(username: 'c', email: 'c', password: 'ccc')
+User.create(username: 'aaa', email: 'aaa', password: 'aaa')
+User.create(username: 'bbb', email: 'bbb', password: 'bbb')
+User.create(username: 'ccc', email: 'ccc', password: 'ccc')
 #
 p 'Created users !'
 #
