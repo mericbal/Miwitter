@@ -14,7 +14,7 @@
     <div class="tweet-content">
       <p id="green"> <%= t.body %> </p>
       <p id="blue"> <%= t.likes.count %> likes ||| <%= t.dislikes.count %> dislikes
-      <span id="red"> <%= t.since? %> hours ago </span> </p>
+      <span id="red"> <%= t.posted_when? %> </span> </p>
     </div>
   </li>
 </ul>
