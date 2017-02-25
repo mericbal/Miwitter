@@ -7,7 +7,9 @@
   <li class="tweet">
     <span> <%= image_tag("https://pbs.twimg.com/profile_images/2858734172/db7da718fd369eba6184973631d7d84a_bigger.jpeg") %> </span>
     <span id="red"> > tweet id: <%= t.id %> </span>
+    <% if @user.id == current_user.id %>
     <span> <%= link_to 'delete tweet', user_tweet_path(@user.id, t), method: :delete %> </span> 
+    <% end %>
     
     <div class="tweet-content">
       <p id="green"> <%= t.body %> </p>
