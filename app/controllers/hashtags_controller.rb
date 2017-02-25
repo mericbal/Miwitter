@@ -7,6 +7,7 @@ class HashtagsController < ApplicationController
 
 	def show
 		@hashtag = Hashtag.find(params[:id])
+		@tweets = TweetHashtag.where(hashtag_id: @hashtag.id)
 	end
 
 	def new
