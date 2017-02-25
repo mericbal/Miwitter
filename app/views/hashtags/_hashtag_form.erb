@@ -1,8 +1,16 @@
-<div id="form-hashtag">
-	<%= form_for @hashtag do |f| %>
+<div id="new_hashtag">
+	new hashtag
+</div>
 
-		<%= f.text_field :name, { placeholder: 'hashtag' } %>
+<div id="slide_2">
+	<div id="form-hashtag">
+		<div id="form-hashtag">
+			<%= form_for @hashtag do |f| %>
 
-		<%= f.submit 'hashtag' %>
-	<% end %>
+				<%= f.text_field :name, { placeholder: 'hashtag' } %>
+
+				<%= f.submit 'hashtag' %>
+			<% end %>
+		</div>
+	</div>
 </div>

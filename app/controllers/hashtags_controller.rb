@@ -16,11 +16,7 @@ class HashtagsController < ApplicationController
 
 	def create
 		@hashtag = Hashtag.new(hashtag_params)
-		if @hashtag.save
-			redirect_to hashtag_path(@hashtag)
-		else
-			render :new
-		end
+		if @hashtag.save then redirect_to hashtag_path(@hashtag) else render :new end
 	end
 
 	private
