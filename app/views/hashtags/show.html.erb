@@ -2,6 +2,8 @@
 
 <h2> <%= @hashtag.name %> </h2>
 
-<h2> <%= @tweets.count %> tweet under this hashtag
+<% @tweets.each do |t| %>
+	<li> <%= t.body %> </li>
+<% end %>
 
 <h4> <%= link_to 'Back', hashtags_path %> </h4>
