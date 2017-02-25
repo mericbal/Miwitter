@@ -58,6 +58,10 @@ a.each do |x|
 end
 puts 'Hashtags added !'
 
+#
+Tweet.create(body: 'I love coding a lot', user_id: 1)
+TweetHashtag.create(tweet_id: 7, hashtag_id: 20)
+#
 
 #
 puts 'Seed complete !'
