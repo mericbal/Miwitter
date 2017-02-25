@@ -2,7 +2,7 @@ class HashtagsController < ApplicationController
 
 	def index
 		@hashtag = Hashtag.new()
-		@hashtags = Hashtag.all.order(name: :asc)
+		@hashtags = Hashtag.all.order(created_at: :desc)
 	end
 
 	def show
