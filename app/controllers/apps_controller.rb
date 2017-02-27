@@ -3,6 +3,7 @@ class AppsController < ApplicationController
 	include SessionsHelper
 
 	def index
+		@tweet = Tweet.new
 	end
 
 	# def secure
