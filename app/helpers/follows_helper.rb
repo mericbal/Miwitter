@@ -1,16 +1,19 @@
 module FollowsHelper
 
 	def follows?(user)
+		following_users.include?(user)
+	end
+
+	def followed_by?(user)
 		followed_users.include?(user)
 	end
 
 	def follow(user)
-		followed_users << user
+		following_users << user
 	end
 
 	def unfollow(user)
-		followed_users.delete(user)
-		user.following.delete
+		following_users.delete(user)
 	end
 
 end
