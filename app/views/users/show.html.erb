@@ -28,15 +28,16 @@
 		<h2> followers - <%= @user.follows.count %> <br> following - <%= @user.following.count %> </h2>
 		<h4> total tweets <%= @tweets.count %> </h4>
 
-		<% if @user.followed_by?(current_user) %>
-			are following this user <%= link_to 'follow' %>
-		<% else %>
-			are NOT following this user
+		<% unless current_user.id == @user.id %>
+			<div id="new_tweet">
+				<% if @user.followed_by?(current_user) %>
+					<%= link_to 'unfollow', user_unfollow_path(@user) %>
+				<% else %>
+					<%= link_to 'follow', user_follow_path(@user) %>
+				<% end %>
+			</div>
 		<% end %>
-
-
-
-
+	
 	</div>
 
 	<div class="content" id="followers">
