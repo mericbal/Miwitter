@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 	end
 	resources :hashtags, only: [:index, :show, :new, :create]
 
+	get '/follow' => "follows#follow"
+	get '/unfollow' => 'follows#unfollow'
+
 end
