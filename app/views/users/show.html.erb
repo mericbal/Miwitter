@@ -19,6 +19,7 @@
 	<% if @tweets.empty? %>
 		Haven't tweeted yet .
 	<% else %>
+		<h2> tweets of <%= @user.username %></h2>
 		<%= render 'tweets/tweets' %>
 	<% end %>
 	</div>
