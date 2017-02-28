@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 		resources :tweets, only: [:new, :create, :destroy]
 		get '/follow' => "follows#follow"
 		get '/unfollow' => 'follows#unfollow'
+		get '/newsfeed' => 'apps#newsfeed'
 	end
 	resources :hashtags, only: [:index, :show, :new, :create]
 

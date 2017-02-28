@@ -1,0 +1,10 @@
+<h2> newsfeed </h2>
+
+<h2> <%= current_user.followed_users.count %> </h2>
+
+<% current_user.followed_users.each do |u|  %>
+	<li id="red"> <%= u.username %> </li>
+	<% u.tweets.each do |t| %>
+		<li id="green"> <%= t.body %> </li>
+		<% end %>
+<% end %>
