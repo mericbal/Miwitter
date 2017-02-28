@@ -7,10 +7,10 @@ Rails.application.routes.draw do
 	# post '/secure' => 'apps#secured'
 	resources :users, only: [:new, :create, :show, :destroy] do 
 		resources :tweets, only: [:new, :create, :destroy]
+		get '/follow' => "follows#follow"
+		get '/unfollow' => 'follows#unfollow'
 	end
 	resources :hashtags, only: [:index, :show, :new, :create]
 
-	get '/follow' => "follows#follow"
-	get '/unfollow' => 'follows#unfollow'
 
 end
