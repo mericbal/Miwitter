@@ -24,19 +24,30 @@
 	</div>
 
 	<div class="content" id='profile'>
+		<h2> Miwitter , <%= @user.username %> </h2>
 		<h2> followers - <%= @user.follows.count %> <br> following - <%= @user.following.count %> </h2>
 		<h4> total tweets <%= @tweets.count %> </h4>
+
+		<% if @user.followed_by?(current_user) %>
+			are following this user <%= link_to 'follow' %>
+		<% else %>
+			are NOT following this user
+		<% end %>
+
+
+
+
 	</div>
 
 	<div class="content" id="followers">
-		<%= @user.follows.count %> people are following 
+		<h2> <%= @user.follows.count %> people follows "<%= @user.username %>" </h2>
 		<% @user.follows.each do |f| %>
 			<li> user = <%= link_to User.find(f.followed_user_id).username, user_path(f.followed_user_id) %> </li>
 		<% end %>
 	</div>
 
 	<div class="content" id="following">
-		  following <%= @user.following.count %> people
+		  <h2> "<%= @user.username %>" following <%= @user.following.count %> people </h2>
 		<% @user.following.each do |f| %>
 			<li> <%= link_to User.find(f.follower_id).username, user_path(f.follower_id) %> </li>
 		<% end %>
