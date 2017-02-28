@@ -9,7 +9,7 @@
 <div class="container">
 	<ul class='tabs'>
 		<li> <%= button_tag 'profile', { href: '#profile' } %> </li>
-		<li class='aktif'> <%= button_tag 'your tweets', { href: '#tweets', id: 'green' } %> </li>
+		<li class='aktif'> <%= button_tag 'tweets', { href: '#tweets', id: 'green' } %> </li>
 		<li> <%= button_tag 'followers', { href: '#followers', id: 'blue' } %> </li>
 		<li> <%= button_tag 'following', { href: '#following', id: 'blue' } %> </li>
 		<li> <%= button_tag 'account information', { href: '#information', id: 'red' } %> </li>
@@ -17,7 +17,7 @@
 
 	<div class="content" id="tweets">
 	<% if @tweets.empty? %>
-		You haven't tweeted yet .
+		Haven't tweeted yet .
 	<% else %>
 		<%= render 'tweets/tweets' %>
 	<% end %>
@@ -25,20 +25,20 @@
 
 	<div class="content" id='profile'>
 		<h2> followers - <%= @user.follows.count %> <br> following - <%= @user.following.count %> </h2>
-		<h4> your tweets <%= @tweets.count %> </h4>
+		<h4> total tweets <%= @tweets.count %> </h4>
 	</div>
 
 	<div class="content" id="followers">
-		<%= @user.follows.count %> people are following you 
+		<%= @user.follows.count %> people are following 
 		<% @user.follows.each do |f| %>
-			<li> user = <%= User.find(f.followed_user_id).username %> </li>
+			<li> user = <%= link_to User.find(f.followed_user_id).username, user_path(f.followed_user_id) %> </li>
 		<% end %>
 	</div>
 
 	<div class="content" id="following">
-		you are following <%= @user.following.count %> people
+		  following <%= @user.following.count %> people
 		<% @user.following.each do |f| %>
-			<li> <%= User.find(f.follower_id).username %> </li>
+			<li> <%= link_to User.find(f.follower_id).username, user_path(f.follower_id) %> </li>
 		<% end %>
 	</div>
 
