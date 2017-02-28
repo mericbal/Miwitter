@@ -11,7 +11,7 @@
     
     <div class="tweet-content">
       <p id="green"> <%= t.body %> </p>
-      <p id="blue"> <%= t.likes.count %> likes ||| <%= t.dislikes.count %> dislikes
+      <p id="blue"> <%= t.likes.count %> <%= link_to 'like', user_tweet_like_path(@user, t.id) %>'s ||| <%= t.dislikes.count %> <%= link_to 'dislike', user_tweet_dislike_path(@user, t.id) %>'s
       <span id="red"> <%= t.posted_when? %> </span> </p>
     </div>
   </li>

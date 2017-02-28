@@ -1,10 +1,10 @@
 module LikesHelper
 
-	def like(user)
+	def add_likes(user)
 		liked_users << user
 	end
 
-	def dislike(users)
+	def add_dislikes(user)
 		disliked_users << user
 	end
 
