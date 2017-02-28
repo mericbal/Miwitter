@@ -1,8 +1,10 @@
-<div id="form-tweet">
-	<%= form_for [current_user, @tweet] do |f| %>
+<div id="slide">
+	<div id="form-tweet">
+		<%= form_for [current_user, @tweet] do |f| %>
 
-		<%= f.text_area :body, { placeholder: 'tweet' } %>
+			<%= f.text_area :body, { placeholder: 'tweet' } %>
 
-		<%= f.submit 'tweet me' %>
-	<% end %>
+			<%= f.submit 'tweet me' %>
+		<% end %>
+	</div>
 </div>
