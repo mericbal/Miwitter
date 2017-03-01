@@ -15,7 +15,11 @@ class LikesController < ApplicationController
 
 	def dislike
 		@tweet = Tweet.find(params[:tweet_id])
-		@tweet.disliked_users << current_user
+		if @tweet.disliked_users.include?(current_user)
+			@tweet.disliked_users.delete(current_user)
+		else
+			@tweet.disliked_users << current_user
+		end
 		redirect_to user_path(@user)
 	end
 
