@@ -4,7 +4,11 @@
 
 <% current_user.followed_users.each do |u|  %>
 	<li id="red"> <%= u.username %> </li>
-	<% u.tweets.each do |t| %>
-		<li id="green"> <%= t.body %> </li>
+	<% u.tweets.order(created_at: :desc).each do |t| %>
+		<% if (Time.now - t.created_at) <= 1000 %>
+			<li id="green"> <%= t.body %> <span id="red"> $$ recent miweet $$ </span> </li>
+		<% else %>
+			<li id="green"> <%= t.body %> </li>
 		<% end %>
+	<% end %>
 <% end %>
