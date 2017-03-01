@@ -11,8 +11,14 @@
     
     <div class="tweet-content">
       <p id="green"> <%= t.body %> </p>
-      <p id="blue"> <%= t.likes.count %> <%= image_tag 'thumbs_up', {width: 20, length: 20} %>  ||| <%= t.dislikes.count %> <%= image_tag 'thumbs_down', {width: 20, length: 20} %>
-      <span id="red"> <%= t.posted_when? %> </span> ||| <span> <%= link_to 'like', user_tweet_like_path(@user, t.id) %> ||| <%= link_to 'dislike', user_tweet_dislike_path(@user, t.id) %></span> </p>
+      <p id="blue"> 
+        <%= t.likes.count %> 
+        <%= image_tag 'thumbs_up', {width: 20, length: 20} %>  ||| 
+        <%= t.dislikes.count %> <%= image_tag 'thumbs_down', {width: 20, length: 20} %>
+      <span id="red"> <%= t.posted_when? %> </span> ||| 
+      <span> <%= link_to 'like', user_tweet_like_path(@user, t.id) %> ||| 
+        <%= link_to 'dislike', user_tweet_dislike_path(@user, t.id) %></span> 
+      </p>
     </div>
   </li>
 </ul>
