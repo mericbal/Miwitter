@@ -14,10 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on('turbolinks:load', function () {
+  $(".thumbs-up").on('click', function(e) {
+    e.preventDefault()
+    var selected = this 
+    $(selected).removeClass('thumbs-up')
+    $(selected).addClass('thumbs-down')
+    $(selected).hide()
+  })
+});
 
 $(document).on('turbolinks:load', function () {
-  $('#tweets').show();  // or // $('#integrity').css("display", "block")
-  
+  $('#tweets').show();
+    
   $('.tabs li').on('click', function (e) {
     e.preventDefault();
 
