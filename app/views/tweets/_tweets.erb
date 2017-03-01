@@ -13,15 +13,15 @@
       <p id="green"> <%= t.body %> </p>
       <p id="blue"> 
         <%= t.likes.count %> 
-        <%= image_tag 'thumbs_up', {width: 20, length: 20} %>  ||| 
-        <%= t.dislikes.count %> <%= image_tag 'thumbs_down', {width: 20, length: 20} %>
+        <%= image_tag 'thumbs_up', {width: 20, length: 20, class: 'thumbs-up'} %>  ||| 
+        <%= t.dislikes.count %> <%= image_tag 'thumbs_down', {width: 20, length: 20, class: 'thumbs-down'} %>
       <span id="red"> <%= t.posted_when? %> </span> ||| 
-      <% if t.liked_users.include?(@user) %>
+      <% if t.liked_users.include?(current_user) %>
         <span> <%= link_to 'un - like', user_tweet_like_path(@user, t.id) %> ||| 
       <% else %>
         <span> <%= link_to 'like', user_tweet_like_path(@user, t.id) %> ||| 
       <% end %>
-      <% if t.disliked_users.include?(@user) %>
+      <% if t.disliked_users.include?(current_user) %>
         <%= link_to 'un - dislike', user_tweet_dislike_path(@user, t.id) %></span> 
       <% else %>
         <%= link_to 'dislike', user_tweet_dislike_path(@user, t.id) %></span> 
