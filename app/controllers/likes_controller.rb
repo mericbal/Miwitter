@@ -1,11 +1,15 @@
 class LikesController < ApplicationController
 	before_action :set_user, only: [:like, :dislike]
-	
+
 	include SessionsHelper
 
 	def like
 		@tweet = Tweet.find(params[:tweet_id])
-		@tweet.liked_users << current_user
+		if @tweet.liked_users.include?(current_user)
+			@tweet.liked_users.delete(current_user)
+		else
+			@tweet.liked_users << current_user
+		end
 		redirect_to user_path(@user)
 	end
 
