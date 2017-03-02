@@ -1,26 +1,12 @@
 # Miwitter
 
-Little Twitter .. :)
+A little Twitter clone .. :)
 
-Things you may want to cover:
 
-* Ruby version
+# Deployed to Heroku at : 'https://miwitter.herokuapp.com/'
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Nested routes 
 
 ```ruby
 resources :users, only: [:new, :create, :show, :destroy] do 
@@ -31,6 +17,5 @@ resources :users, only: [:new, :create, :show, :destroy] do
 		get '/follow' => "follows#follow"
 		get '/unfollow' => 'follows#unfollow'
 		get '/newsfeed' => 'apps#newsfeed'
-	end
-	resources :hashtags, only: [:index, :show, :new, :create]
+end
 ```
