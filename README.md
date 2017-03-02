@@ -22,7 +22,7 @@ Things you may want to cover:
 
 * ...
 
-```
+```ruby
 resources :users, only: [:new, :create, :show, :destroy] do 
 		resources :tweets, only: [:new, :create, :destroy] do 
 			get '/like' => "likes#like"
