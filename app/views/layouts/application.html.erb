@@ -27,7 +27,7 @@
           <!-- <button class="button"> <%= link_to current_user.username, user_path(current_user) %> </button> -->
 				  <div class="dropdown-content">
 						<%= link_to 'profile', user_path(current_user) %>
-            <%= link_to 'logout', logout_path %>
+            <%= link_to 'logout', logout_path, data: { confirm: 'Logout ?' } %>
 			  	</div>
   </div>
 	<% end %>
