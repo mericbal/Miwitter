@@ -1,4 +1,8 @@
 class Tweet < ApplicationRecord
+	#validationis
+	validates :body, :user_id, presence: true
+	validates :body, length: { maximum: 160, too_long: 'has to be less than %{count} characters.'} 
+
 	belongs_to :user
 
 	#likes and dislikes
@@ -14,7 +18,7 @@ class Tweet < ApplicationRecord
 	def posted_when?
 	  t = ((Time.now - created_at)/60).round # minutes ago
 	  case t 
-		  when 0..1 then ' just now '
+		  when 0..1 then ' just now ' 
 		  when 1..59 then 'About ' + t.to_s + ' mins ago'
 		  when 60..1439 then 'About ' + (t/60).round.to_s + ' hours ago'
 		  when 1440..34560 then 'About ' + (t/1440).round.to_s + ' days ago'
