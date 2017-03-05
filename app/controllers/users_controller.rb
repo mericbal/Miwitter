@@ -20,7 +20,11 @@ class UsersController < ApplicationController
 
 	def show
 		@tweet = Tweet.new
-		@tweets = @user.tweets.order(created_at: :desc)
+		if @user == current_user
+			@tweets = @user.tweets.order(created_at: :desc)
+		else
+			@tweets = @user.tweets.where(private: false).order(created_at: :desc)
+		end
 	end
 
 	def destroy
