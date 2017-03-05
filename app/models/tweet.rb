@@ -24,4 +24,5 @@ class Tweet < ApplicationRecord
 		  when 1440..34560 then 'About ' + (t/1440).round.to_s + ' days ago'
 	  end
 	end
+	
 end
