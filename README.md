@@ -19,3 +19,11 @@ resources :users, only: [:new, :create, :show, :destroy] do
 		get '/newsfeed' => 'apps#newsfeed'
 end
 ```
+
+Future improvements :
+
+Adding an option for users to select their avatar images.
+Creating tweets with hashtags.
+Adding an image option to tweets for uploading images in tweets .
+
+by MB
