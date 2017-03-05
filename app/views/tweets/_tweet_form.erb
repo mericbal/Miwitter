@@ -3,6 +3,8 @@
 		<%= form_for [current_user, @tweet] do |f| %>
 
 			<%= f.text_area :body, { placeholder: 'tweet' } %>
+			<%= f.label :private %>
+			<%= f.check_box :private %> <br />
 
 			<%= f.submit 'tweet me' %>
 		<% end %>
