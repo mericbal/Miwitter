@@ -1,8 +1,8 @@
-class NewsfeedController < ApplicationController
+class NewsfeedsController < ApplicationController
 
 	def index
 		@user = User.find(params[:user_id])
-		@users = current_user.following_users.where(private: false).order(created_at: :desc)
+		@following_users = @user.following_users
 	end
 
 end
