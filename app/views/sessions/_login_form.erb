@@ -1,11 +1,19 @@
 <div id="form-login">
+	<b />
 	<%= form_tag login_path do %>
-	<%= label_tag :email %>
-	<%= text_field_tag :email %>
-	
-	<%= label_tag :password %>
-	<%= password_field_tag :password %>
-
-	<%= submit_tag 'log me in' %>
+	<h3 id="green"> <%= label_tag :email %>
+	<%= text_field_tag :email %> </h3>
+	 <span id="red"> 	or </span>
+	<h3 id="green"> <%= label_tag :username %>
+	<%= text_field_tag :username %> </h3>
+	</p>
+	<p>
+	<span id="red"> and </span>
+	<h3 id="green"> <%= label_tag :password %>
+	<%= password_field_tag :password %> </h3>
+	</p>
+	<p><%= submit_tag 'log me in' %> </p>
 <% end %>
+	<br />
+	<br />
 </div>
