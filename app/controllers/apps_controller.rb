@@ -6,10 +6,6 @@ class AppsController < ApplicationController
 		@tweet = Tweet.new
 	end
 
-	def newsfeed
-		@user = User.find(params[:user_id])
-	end
-
 	# def secure
 	# 	@user = current_user
 	# end
