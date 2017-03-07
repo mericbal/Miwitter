@@ -25,8 +25,8 @@ $(document).on('turbolinks:load', function () {
 });
 
 $(document).on('turbolinks:load', function () {
-  $('#tweets').show();
-    
+  $('#profile').show();
+
   $('.tabs li').on('click', function (e) {
     e.preventDefault();
 
