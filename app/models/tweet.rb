@@ -2,6 +2,8 @@ class Tweet < ApplicationRecord
 	#validationis
 	validates :body, :user_id, presence: true
 	validates :body, length: { maximum: 160, too_long: 'has to be less than %{count} characters.'} 
+	validates :body, length: { minimum: 6, too_short: 'has to be more than %{count} characters.'} 
+
 
 	belongs_to :user
 

@@ -3,7 +3,6 @@
 <% @tweets.each do |t| %>
 <ul>
   <li class="tweet">
-    <span> <%= image_tag("https://pbs.twimg.com/profile_images/2858734172/db7da718fd369eba6184973631d7d84a_bigger.jpeg") %> </span>
     <% if t.private == true %> <span id="red"> > Private Tweet </span> <% end %>
 
     <% if @user.id == current_user.id %>

@@ -1,7 +1,11 @@
 class User < ApplicationRecord
 	has_secure_password
 	include FollowsHelper
-	
+
+	# paperclip
+	has_attached_file :avatar, styles: { large: "500x500", medium: "300x300>", thumb: "100x100>" }, default_url: "anon1.jpeg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
 	# tweets
 	has_many :tweets
 	has_many :likes
