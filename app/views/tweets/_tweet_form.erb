@@ -2,11 +2,14 @@
 	<div id="form-tweet">
 		<%= form_for [current_user, @tweet] do |f| %>
 
-			<%= f.text_area :body, { placeholder: 'tweet' } %>
-			<%= f.label :private %>
-			<%= f.check_box :private %> <br />
+			<%= f.text_area :body, { placeholder: 'min: 6 , max: 160' } %>
+			<br />
+			<%= f.label ' private ?'.downcase %>
+			<%= f.check_box :private %>
+			<br />
+			<br />
 
-			<%= f.submit 'tweet me' %>
+			<%= f.submit 'miweet me' %>
 		<% end %>
 	</div>
 </div>
