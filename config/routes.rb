@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-	get '/' => 'apps#index'
+	
+	# login # logout
+	get '/' => 'sessions#new'
 	get '/login' => 'sessions#new'
 	post 'login' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'
-	# get '/secure' => 'apps#secure'
-	# post '/secure' => 'apps#secured'
+
+	# user nested routes
 	resources :users, only: [:new, :create, :show, :destroy] do 
 		resources :tweets, only: [:new, :create, :destroy] do 
 			get '/like' => "likes#like"
@@ -14,7 +16,8 @@ Rails.application.routes.draw do
 		get '/unfollow' => 'follows#unfollow'
 		get '/newsfeed' => 'newsfeeds#index'
 	end
-	resources :hashtags, only: [:index, :show, :new, :create]
 
+	# hashtags
+	resources :hashtags, only: [:index, :show, :new, :create]
 
 end
