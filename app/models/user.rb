@@ -14,10 +14,10 @@ class User < ApplicationRecord
 	has_many :disliked_tweets, through: :dislikes, source: :tweet
 
 	# follows
-	has_many :follows, foreign_key: :follower_id, inverse_of: :follower
-	has_many :followed_users, through: :follows, source: :followed_user
-	has_many :following, class_name: 'Follow', foreign_key: :followed_user_id, inverse_of: :followed_user
-	has_many :following_users, through: :following, source: :follower
+	has_many :follows, foreign_key: :follower_id, inverse_of: :follower, dependent: :destroy
+	has_many :followed_users, through: :follows, source: :followed_user, dependent: :destroy
+	has_many :following, class_name: 'Follow', foreign_key: :followed_user_id, inverse_of: :followed_user, dependent: :destroy
+	has_many :following_users, through: :following, source: :follower, dependent: :destroy
 	
 	#validations
 	validates :username, :email, presence: true
