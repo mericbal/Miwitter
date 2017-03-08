@@ -14,7 +14,6 @@
       <li> <%= link_to 'sign up', new_user_path, class: 'left-links' %> </li>
       <li> <%= link_to 'login', login_path, class: 'left-links' %> </li>
       <% else %>
-      <li> <%= link_to 'home', '/', class: 'left-links' %> </li>
       <li> <%= link_to 'newsfeed', user_newsfeed_path(current_user), class: 'left-links' %> </li>
       <% end %>
       <li> <%= link_to 'hashtags', hashtags_path, class: 'left-links' %> </li>
