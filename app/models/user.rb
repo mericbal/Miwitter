@@ -6,6 +6,9 @@ class User < ApplicationRecord
 	has_attached_file :avatar, styles: { large: "500x500", medium: "300x300>", thumb: "100x100>" }, default_url: "anon1.jpeg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
+  #hashtags
+  has_many :hashtags
+
 	# tweets
 	has_many :tweets
 	has_many :likes
@@ -20,13 +23,14 @@ class User < ApplicationRecord
 	has_many :following_users, through: :following, source: :follower, dependent: :destroy
 	
 	#validations
-	validates :username, :email, presence: true
+	validates :first, :last, :username, :email, presence: true
+	validates :first, :last, length: { minimum: 2, too_short: 'has to be more than %{count} characters.' }
 	validates :username, :email, uniqueness: true
-	validates :username, length: {minimum: 3, too_short: 'has to be more than %{count} characters.'}
+	validates :username, length: { minimum: 3, too_short: 'has to be more than %{count} characters.' }
 	# validates :password#, length: { minimum: 3, too_short: ' has to be more than %{count} characters. ' }
 
-	def full_info
-		'username=' + self.username.to_s + ' email=' + self.email.to_s + ' pass=' + self.password_digest.to_s
+	def fullname
+		self.first.to_s + ' ' + self.last.to_s
 	end
 
 end
