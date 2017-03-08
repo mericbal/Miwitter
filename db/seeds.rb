@@ -1,5 +1,6 @@
 # validations
 # username has to be more than 3 
+#first and last = more than 2
 
 User.destroy_all
 Tweet.destroy_all
@@ -10,8 +11,8 @@ Follow.destroy_all
 puts 'Destroyed all tables !'
 #
 
-u1 = User.create(username: 'aaa', email: 'aaa', password: 'aaa')
-u2 = User.create(username: 'bbb', email: 'bbb', password: 'bbb')
+u1 = User.create(first: 'aa', last: 'bb', username: 'aaa', email: 'aaa', password: 'aaa')
+u2 = User.create(first: 'bb', last: 'bb', username: 'bbb', email: 'bbb', password: 'bbb')
 # User.create(username: 'ccc', email: 'ccc', password: 'ccc')
 #
 p 'Created users !'
