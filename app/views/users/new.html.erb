@@ -1,11 +1,11 @@
 <h2> <span id="blue"> sign up to </span> Miwitter </h2>
 
-<%= render 'user_form' %>
-
 <% if @errors %>
 	<% @errors.each do |e| %>
-		<li> <%= e %> </li>
+		<li id="red"> <%= e %> </li>
 	<% end %>
 <% end %>
+
+<%= render 'user_form' %>
 
 <span id="blue"> already signed up ? no problem <%= link_to 'click here', login_path %> </span>

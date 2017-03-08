@@ -11,10 +11,10 @@
   <div id="menubar">
   	<ul id='menubar-list'>
       <% if current_user == nil %>
-      <li> <%= link_to 'sign up', new_user_path, class: 'left-links' %> </li>
-      <li> <%= link_to 'login', login_path, class: 'left-links' %> </li>
+        <li> <%= link_to 'sign up', new_user_path, class: 'left-links' %> </li>
+        <li> <%= link_to 'login', login_path, class: 'left-links' %> </li>
       <% else %>
-      <li> <%= link_to 'newsfeed', user_newsfeed_path(current_user), class: 'left-links' %> </li>
+        <li> <%= link_to 'newsfeed', user_newsfeed_path(current_user), class: 'left-links' %> </li>
       <% end %>
       <li> <%= link_to 'hashtags', hashtags_path, class: 'left-links' %> </li>
     </ul>
@@ -22,8 +22,8 @@
 
 	<% if current_user %>
   <div id='menu-user', class="dropdown">
-          <%= image_tag current_user.avatar.url, { height: 100, length: 100} %>
-          <!-- <%= button_tag current_user.username, class: 'button' %> -->
+          <!-- <%= image_tag current_user.avatar.url, { height: 100, length: 100} %> -->
+          <%= button_tag current_user.username, class: 'button' %>
           <!-- <button class="button"> <%= link_to current_user.username, user_path(current_user) %> </button> -->
 				  <div class="dropdown-content">
 						<%= link_to 'profile', user_path(current_user) %>
