@@ -1,7 +1,7 @@
 <h2> <span id="blue"> login to </span> Miwitter</h2>
 
 <% if @error %>
-	<%= @error %>
+	<p id="red"> <%= @error %> </p>
 <% end %>
 
 <%= render 'login_form' %>
