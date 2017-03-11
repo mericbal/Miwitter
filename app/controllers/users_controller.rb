@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :destroy]
+	before_action :find_user, only: [:show, :destroy]
 
 	include SessionsHelper
 	
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			login(@user)
-			redirect_to user_path(@user)
+			redirect_to user_path(@user), flash: { notice: 'Registered succesfully.'}
 		else
 			@errors = @user.errors.full_messages
 			render :new
@@ -36,12 +36,12 @@ class UsersController < ApplicationController
 
 	private 
 
-	def set_user
+	def find_user
 		@user = User.find(params[:id])
 	end
 
 	def user_params
-		params.require(:user).permit(:username, :email, :password, :avatar)
+		params.require(:user).permit(:first, :last, :username, :email, :password, :avatar)
 	end
 
 end
