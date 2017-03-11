@@ -35,6 +35,15 @@
   background-color: #4CAF50;
 }
 
+/* notice */
+.notice {
+  position: fixed;
+  top: 10px;
+  left: 400px;
+  padding: 4px;
+}
+
+
 #slide {
   /*width: 30%;*/
   /*background-color: #4CAF50;*/
