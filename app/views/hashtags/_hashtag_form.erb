@@ -10,9 +10,12 @@
 				<%= f.label '#' %>
 				<%= f.text_field :name, { value: '#' } %>
 				<br />
-				<%= f.label 'private ?' %>
-				<%= f.check_box :private %>
+				<% if current_user %>
+					<%= f.label 'private ?' %>
+					<%= f.check_box :private %>
 				<br />
+				<% end %>
+				
 				<br />
 				
 				<%= f.submit 'hashtag' %>

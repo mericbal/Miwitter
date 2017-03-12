@@ -16,13 +16,22 @@ class HashtagsController < ApplicationController
 
 	def create
 		@hashtag = Hashtag.new(hashtag_params)
-		if @hashtag.save then redirect_to hashtag_path(@hashtag) else render :new end
+		# if current_user
+		# 	@hashtag.user_id = current_user.id
+		# end
+		# if @hashtag.save
+		# 	if current_user && @hashtag.private == true
+
+		# 	redirect_to hashtag_path(@hashtag) 
+		# else 
+		# 	render :new 
+		# end
 	end
 
 	private
 
 	def hashtag_params
-		params.require(:hashtag).permit(:name)
+		params.require(:hashtag).permit(:name, :private)
 	end
 
 end
