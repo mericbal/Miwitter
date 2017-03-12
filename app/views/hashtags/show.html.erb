@@ -3,16 +3,16 @@
 <% end %>
 
 <!--  -->
-<% if @hashtag.user_id == nil %>
-	<h2 id="green"> <%= @hashtag.name %> </h2> <span id="red"> created by anonymous user. </span>
-<% else %>
-	<h2 id="green"> <%= @hashtag.name %> </h2> <span id="blue"> created by <%= link_to '@' + User.find(@hashtag.user_id).username, user_path(@hashtag.user_id) %> </span>
+<% if current_user %>
+	<% if @hashtag.user_id == nil %>
+		<h2 id="green"> <%= @hashtag.name %> </h2> <span id="red"> created by anonymous user. </span>
+	<% else %>
+		<h2 id="green"> <%= @hashtag.name %> </h2> <span id="blue"> created by <%= link_to '@' + User.find(@hashtag.user_id).username, user_path(@hashtag.user_id) %> </span>
+	<% end %>
 <% end %>
 
-<% @tweets.each do |t| %>
-	<li> <%= t.body %> </li>
-	Tweeted by : <%= link_to User.find(t.user_id).username, user_path(t.user_id) %>
-		<br> <br>
-<% end %>
+<h2 id="green"> <%= @hashtag.name %> </h2> <span id="red"> created by anonymous user. </span>
 
 <h4> <%= link_to 'Back', hashtags_path %> </h4>
+
+<%= render "hashtag_tweets" %>

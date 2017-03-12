@@ -1,0 +1,48 @@
+<% if current_user %>
+  <section id="tweets-container">
+
+  <% @tweets.each do |t| %>
+  	<% @user = t.user_id %>
+  <ul>
+    <li class="tweet">
+      <div class="tweet-content">
+        <p id="blue"> tweeted by <%= link_to "@" + User.find(t.user_id).username, user_path(t.user_id) %> </p>
+        <p id="green"> <%= t.body %> </p>
+        <p id="blue"> 
+          <%= t.likes.count %> 
+          <%= image_tag 'thumbs_up', {width: 20, length: 20, class: 'thumbs-up'} %>  ||| 
+          <%= t.dislikes.count %> <%= image_tag 'thumbs_down', {width: 20, length: 20, class: 'thumbs-down'} %>
+        <span id="red"> <%= t.posted_when? %> </span> ||| 
+        <% if t.liked_users.include?(current_user) %>
+          <span> <%= link_to 'un - like', user_tweet_like_path(@user, t.id) %> ||| 
+        <% else %>
+          <span> <%= link_to 'like', user_tweet_like_path(@user, t.id) %> ||| 
+        <% end %>
+        <% if t.disliked_users.include?(current_user) %>
+          <%= link_to 'un - dislike', user_tweet_dislike_path(@user, t.id) %></span> 
+        <% else %>
+          <%= link_to 'dislike', user_tweet_dislike_path(@user, t.id) %></span> 
+        <% end %>
+        </p>
+      </div>
+    </li>
+  </ul>
+  <% end %>
+
+  </section>
+<% end %>
+
+
+<section id="tweets-container">  
+  <% @tweets.each do |t| %>
+    <ul> 
+      <li class="tweet">
+          <div class="tweet-content">
+            <p id="green"> <%= t.body %> </p>
+            <p id="blue"> <%= t.likes.count %> <%= image_tag 'thumbs_up', {width: 20, length: 20, class: 'thumbs-up'} %> ||| <%= t.dislikes.count %> <%= image_tag 'thumbs_down', {width: 20, length: 20, class: 'thumbs-down'} %>
+          <span id="red"> <%= t.posted_when? %> </span> 
+          </div>
+      </li>
+    </ul>
+  <% end %>
+</section>
