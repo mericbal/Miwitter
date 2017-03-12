@@ -1,4 +1,5 @@
 class HashtagsController < ApplicationController
+	include SessionsHelper
 
 	def index
 		@hashtag = Hashtag.new()
@@ -16,16 +17,14 @@ class HashtagsController < ApplicationController
 
 	def create
 		@hashtag = Hashtag.new(hashtag_params)
-		# if current_user
-		# 	@hashtag.user_id = current_user.id
-		# end
-		# if @hashtag.save
-		# 	if current_user && @hashtag.private == true
-
-		# 	redirect_to hashtag_path(@hashtag) 
-		# else 
-		# 	render :new 
-		# end
+		if current_user && @hashtag.private == false
+			@hashtag.user_id = current_user.id
+		end
+		if @hashtag.save
+			redirect_to hashtag_path(@hashtag) 
+		else 
+			render :new 
+		end
 	end
 
 	private
