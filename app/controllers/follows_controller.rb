@@ -6,12 +6,12 @@ class FollowsController < ApplicationController
 
 	def follow
 		current_user.follow(@user)
-		redirect_to user_path(@user)
+		redirect_to user_path(@user), notice: 'added to follows'
 	end
 
 	def unfollow
 		current_user.unfollow(@user)
-		redirect_to user_path(@user)
+		redirect_to user_path(@user), alert: 'not following'
 	end
 
 	private 

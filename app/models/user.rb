@@ -30,7 +30,7 @@ class User < ApplicationRecord
 	# validates :password#, length: { minimum: 3, too_short: ' has to be more than %{count} characters. ' }
 
 	def fullname
-		self.first.to_s + ' ' + self.last.to_s
+		self.first.to_s.capitalize + ' ' + self.last.to_s.capitalize
 	end
 
 end

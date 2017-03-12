@@ -51,6 +51,13 @@
   padding: 4px;
 }
 
+/* pad */
+#pad {
+  position: absolute;
+  padding-left: 40px
+  /*left: 500px;*/
+}
+
 #slide {
   /*width: 30%;*/
   /*background-color: #4CAF50;*/
