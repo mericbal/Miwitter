@@ -1,13 +1,5 @@
 <h2> <span id="blue"> login to </span> Miwitter</h2>
 
-<% if flash[:notice] %>
-	<div class="notice" id="green"> <%= flash[:notice] %> </div>
-<% end %>
-
-<% if flash[:alert] %>
-	<div class="alert" id="red"> <%= flash[:alert] %> </div>
-<% end %>
-
 <%= render 'login_form' %>
 
 <span id="blue"> new user ? no problem <%= link_to 'click here', new_user_path %> </span>

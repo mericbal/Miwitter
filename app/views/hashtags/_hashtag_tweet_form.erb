@@ -1,0 +1,18 @@
+<div id="new_tweet">
+	tweet under this hashtag
+</div>
+
+<div id="slide">
+	<div id="form-tweet">
+		<%= form_for [@hashtag, @tweet], url: hashtag_new_path(@hashtag) do |f| %>
+
+			<%= f.text_area :body, { placeholder: 'min: 6 , max: 160' } %>
+			<br />
+			<%= f.label @hashtag.name %>
+			<br />
+			<br />
+
+			<%= f.submit 'add tweet' %>
+		<% end %>
+	</div>
+</div></div>
