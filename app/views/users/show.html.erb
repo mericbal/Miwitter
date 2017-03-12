@@ -18,6 +18,10 @@
 	<div class="notice" id="green"> <%= flash[:notice] %> </div>
 <% end %>
 
+<% if flash[:alert] %>
+	<div class="alert" id="red"> <%= flash[:alert] %> </div>
+<% end %>
+
 <div class="container">
 
 	<ul class='tabs'>

@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 	def destroy
 		logout
 		@user.destroy
-		redirect_to '/'
+		redirect_to '/', flash: { alert: 'you have been succesfully deactivated !'}
 	end
 
 
