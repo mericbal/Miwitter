@@ -13,3 +13,17 @@
 	<% end %>
 	</h3>
 <% end %>
+
+
+
+
+<!-- ############ -->
+
+
+<% @hashtags.each do |h| %>
+	<% if h.user_id == nil %>
+		<h3 id="blue"> <%= link_to h.name, hashtag_path(h) %> --- Created by anonymous ! </h3>
+	<% else %>
+		<h3 id="gree"> <%= link_to h.name, hashtag_path(h) %> --- Created by user <%= User.find(h.user_id) %> </h3>
+	<% end %>
+<% end %>
