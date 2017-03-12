@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 	end
 
 	# hashtags
-	resources :hashtags, only: [:index, :show, :new, :create]
+	resources :hashtags, only: [:index, :show, :new, :create] do
+		post '/new' => "hashtags_tweets#create"
+	end
 
 end

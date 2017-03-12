@@ -8,6 +8,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<% if flash[:notice] %>
+  <div class="notice" id="green"> <%= flash[:notice] %> </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="alert" id="red"> <%= flash[:alert] %> </div>
+<% end %>
+
+
   <div id="menubar">
   	<ul id='menubar-list'>
       <% if current_user == nil %>

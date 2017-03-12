@@ -1,6 +1,13 @@
-<h2> hashtag page </h2>
+<% if current_user %>
+	<%= render "hashtag_tweet_form" %>
+<% end %>
 
-<h2> <%= @hashtag.name %> </h2>
+<!--  -->
+<% if @hashtag.user_id == nil %>
+	<h2 id="green"> <%= @hashtag.name %> </h2> <span id="red"> created by anonymous user. </span>
+<% else %>
+	<h2 id="green"> <%= @hashtag.name %> </h2> <span id="blue"> created by <%= link_to '@' + User.find(@hashtag.user_id).username, user_path(@hashtag.user_id) %> </span>
+<% end %>
 
 <% @tweets.each do |t| %>
 	<li> <%= t.body %> </li>

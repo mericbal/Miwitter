@@ -52,10 +52,15 @@
 }
 
 /* pad */
-#pad {
+.pad {
   position: absolute;
-  padding-left: 40px
+  padding-left: 200px
   /*left: 500px;*/
+}
+
+.pad2 {
+  position: absolute;
+  padding-left: 50px;
 }
 
 #slide {
@@ -64,8 +69,6 @@
 
 }
 /* slide */
-
-h2{ color: green }
 
 body {
 	padding-top: 10px;
