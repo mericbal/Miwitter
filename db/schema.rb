@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170225012332) do
 
   create_table "hashtags", force: :cascade do |t|
     t.string   "name"
+    t.boolean  "private"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
