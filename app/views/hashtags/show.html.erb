@@ -9,10 +9,6 @@
 	<h2 id="green"> <%= @hashtag.name %> </h2> <span id="blue"> created by <%= link_to '@' + User.find(@hashtag.user_id).username, user_path(@hashtag.user_id) %> </span>
 <% end %>
 
-<% @tweets.each do |t| %>
-	<li> <%= t.body %> </li>
-	Tweeted by : <%= link_to User.find(t.user_id).username, user_path(t.user_id) %>
-		<br> <br>
-<% end %>
-
 <h4> <%= link_to 'Back', hashtags_path %> </h4>
+
+<%= render "hashtag_tweets" %>
