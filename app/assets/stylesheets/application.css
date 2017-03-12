@@ -54,7 +54,8 @@
 /* pad */
 #pad {
   position: absolute;
-  left: 300px;
+  padding-left: 40px
+  /*left: 500px;*/
 }
 
 #slide {

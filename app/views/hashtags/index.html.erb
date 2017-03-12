@@ -6,7 +6,7 @@
 	<% if h.user_id == nil %>
 		<h3 id="red"> <%= link_to h.name, hashtag_path(h) %> <span id="pad"> Created by anonymous ! </h3> </span>
 	<% else %>
-		<h3 id="green"> <%= link_to h.name, hashtag_path(h) %> <span id="pad"> Created by user <%= link_to User.find(h.user_id).fullname, user_path(h.user_id) %> </h3> </span>
+		<h3 id="green"> <%= link_to h.name, hashtag_path(h) %> <span id="pad"> Created by <%= link_to '@' + User.find(h.user_id).username, user_path(h.user_id) %> </h3> </span>
 	<% end %>
 <% end %>
 
