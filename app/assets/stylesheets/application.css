@@ -43,6 +43,13 @@
   padding: 4px;
 }
 
+/* alert */
+.alert {
+  position: fixed;
+  top: 10px;
+  left: 400px;
+  padding: 4px;
+}
 
 #slide {
   /*width: 30%;*/
