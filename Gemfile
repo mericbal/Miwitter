@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'awesome_print'
 gem 'faker'
 gem "paperclip", "~> 5.0.0"
+gem 'rmagick', '~> 2.16'
