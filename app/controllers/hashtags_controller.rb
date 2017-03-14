@@ -29,11 +29,6 @@ class HashtagsController < ApplicationController
 		end
 	end
 
-	def new_tweet
-		@hashtag = Hashtag.find(params[:id])
-		@tweet = Tweet.new
-	end
-
 	private
 
 	def hashtag_params

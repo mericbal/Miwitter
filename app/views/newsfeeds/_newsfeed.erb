@@ -1,0 +1,10 @@
+<% @following_users.each do |u|  %>
+		<h2> <%= image_tag u.avatar.url, {width: 50, length: 50} %> from, <%= link_to "@" + u.username, user_path(u) %> </h2>
+	<% u.tweets.where(private: false).order(created_at: :desc).each do |t| %>
+		<% if (Time.now - t.created_at) <= 110000 %>
+			<li id="green"> <%= t.body %> <span id="red"> <%= t.posted_when? %> </span> </li>
+		<% else %>
+			<li id="green"> <%= t.body %> </li>
+		<% end %>
+	<% end %>
+<% end %>
