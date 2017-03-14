@@ -1,14 +1,3 @@
-<h2> your newsfeed </h2>
+<h2 id="green"> your newsfeed </h2>
 
-<h2> <%= @following_users.count %> </h2>
-
-<% @following_users.each do |u|  %>
-		<h2> from, <%= u.username %> <%= link_to '->', user_path(u) %> </h2>
-	<% u.tweets.where(private: false).order(created_at: :desc).each do |t| %>
-		<% if (Time.now - t.created_at) <= 110000 %>
-			<li id="green"> <%= t.body %> <span id="red"> <%= t.posted_when? %> </span> </li>
-		<% else %>
-			<li id="green"> <%= t.body %> </li>
-		<% end %>
-	<% end %>
-<% end %>
+<%= render "newsfeed" %>
