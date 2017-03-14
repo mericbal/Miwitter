@@ -17,9 +17,9 @@
 <div class="container">
 
 	<ul class='tabs'>
-		<li class='aktif'> <%= button_tag 'profile', { href: '#profile' } %> </li>
+		<li> <%= button_tag 'profile', { href: '#profile' } %> </li>
 		<li> <%= button_tag 'tweets', { href: '#tweets', id: 'green' } %> </li>
-		<li> <%= button_tag 'followers', { href: '#followers', id: 'blue' } %> </li>
+		<li class='aktif'> <%= button_tag 'followers', { href: '#followers', id: 'blue' } %> </li>
 		<li> <%= button_tag 'following', { href: '#following', id: 'blue' } %> </li>
 		<li> <%= button_tag 'account information', { href: '#information', id: 'red' } %> </li>
 	</ul>
@@ -41,14 +41,18 @@
 	</div>
 
 	<div class="content" id="followers">
-		<h2> <%= @user.follows.count %> people follows "<%= @user.username %>" </h2>
+		<h2 id="green"> <%= @user.follows.count %> people follows "<%= @user.username %>" </h2>
 		<% @user.follows.each do |f| %>
-			<li> user = <%= link_to User.find(f.followed_user_id).username, user_path(f.followed_user_id) %> </li>
+			<li> 
+				<% user = User.find(f.followed_user_id) %>
+				<%= image_tag user.avatar.url, {width: 50, length: 50} %>
+				<%= link_to '@' + User.find(f.followed_user_id).username, user_path(f.followed_user_id) %> 
+			</li>
 		<% end %>
 	</div>
 
 	<div class="content" id="following">
-		  <h2> "<%= @user.username %>" following <%= @user.following.count %> people </h2>
+		  <h2 id="green"> "<%= @user.username %>" following <%= @user.following.count %> people </h2>
 		<% @user.following.each do |f| %>
 			<li> <%= link_to User.find(f.follower_id).username, user_path(f.follower_id) %> </li>
 		<% end %>
