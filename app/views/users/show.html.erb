@@ -25,10 +25,10 @@
 	</ul>
 
 	<div class="content" id='profile'>
-		<h2> Miwitter , <%= @user.username %> </h2>
+		<h2 id="green"> <%= @user.fullname %> </h2>
 		<p> <%= image_tag	@user.avatar.url, {width: 400, length: 400, class: 'profile-images' }%> </p>
-		<h2> followers - <%= @user.follows.count %> <br> following - <%= @user.following.count %> </h2>
-		<h4> total tweets <%= @tweets.count %> </h4>
+		<h2 id="blue"> followers - <%= @user.follows.count %> <br> following - <%= @user.following.count %> </h2>
+		<h4 id="red"> total tweets <%= @tweets.count %> </h4>
 	</div>
 
 	<div class="content" id="tweets">
@@ -41,7 +41,7 @@
 	</div>
 
 	<div class="content" id="followers">
-		<h2 id="green"> <%= @user.follows.count %> people follows "<%= @user.username %>" </h2>
+		<h2 id="green"> <%= @user.follows.count %> people follows @<%= @user.username %> </h2>
 		<% @user.follows.each do |f| %>
 			<li> 
 				<% user = User.find(f.followed_user_id) %>
@@ -52,9 +52,13 @@
 	</div>
 
 	<div class="content" id="following">
-		  <h2 id="green"> "<%= @user.username %>" following <%= @user.following.count %> people </h2>
+		  <h2 id="green"> @<%= @user.username %> following <%= @user.following.count %> people </h2>
 		<% @user.following.each do |f| %>
-			<li> <%= link_to User.find(f.follower_id).username, user_path(f.follower_id) %> </li>
+			<li> 
+				<% user = User.find(f.follower_id) %>
+				<%= image_tag user.avatar.url, {width: 50, length: 50} %>
+				<%= link_to "@" + User.find(f.follower_id).username, user_path(f.follower_id) %> 
+			</li>
 		<% end %>
 	</div>
 
