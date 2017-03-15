@@ -19,13 +19,15 @@ class HashtagsController < ApplicationController
 
 	def create
 		@hashtag = Hashtag.new(hashtag_params)
-		if current_user && @hashtag.private == false
-			@hashtag.user_id = current_user.id
-		end
-		if @hashtag.save
-			redirect_to hashtag_path(@hashtag), notice: 'hashtag has been created .'
-		else 
-			render :new 
+		unless @hashtag.name.start_with?("#") == true
+			redirect_to hashtags_path, alert: 'has to start with #'
+		else
+			if current_user && @hashtag.private == false then @hashtag.user_id = current_user.id end
+			if @hashtag.save
+				redirect_to hashtag_path(@hashtag), notice: 'hashtag has been created'
+			else
+				redirect_to hashtags_path, alert: 'hashtag is either too short or there is another hashtag with this name' 
+			end
 		end
 	end
 
