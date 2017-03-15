@@ -2,34 +2,35 @@
 	<%= form_for @user, url: users_path do |f| %>
 		
 		<h3 id="green">
-		<%= f.label 'First name' %> 
+		<%= f.label ' first name' %> 
 		<%= f.text_field :first, placeholder: 'more than 2 characters' %> <span id="red"> * </span>
 		</h3>
 
 		<h3 id="green">
-		<%= f.label "Last name" %> 
+		<%= f.label " last name" %> 
 		<%= f.text_field :last, placeholder: 'more than 2 characters' %> <span id="red"> * </span>
 		</h3>	
 
 		<h3 id="green">
-		<%= f.label :username %> 
+		<%= f.label " username @" %> 
 		<%= f.text_field :username, placeholder: 'more than 3 characters' %> <span id="red"> * </span>
 		</h3>
 
 		<h3 id="green">
-		<%= f.label :email %>
+		<%= f.label " email" %>
 		<%= f.text_field :email, placeholder: 'email' %> <span id="red"> * </span>
 		</h3>
 
 		<h3 id="green">
-		<%= f.label :password %>
+		<%= f.label " password" %>
 		<%= f.password_field :password, placeholder: 'more than 3 characters' %> <span id="red"> * </span>
 		</h3>
 
 		<h3 id="green">
-			<%= f.label 'image' %> <br />
+			<%= f.label ' image' %> <br />
 			<text id="red"><%= f.file_field :avatar, as: :file %> </text>	
 		</h3>
+		<br/>
 
 		<h3 id="green" > <%= f.submit %> </h3>
 
