@@ -1,0 +1,14 @@
+<% @tweets.each do |t| %>
+
+	<h3>
+	<% if (Time.now - t.created_at) <= 110000 %>
+		<li id="green"> <%= t.body %> <span id="red"> <%= t.posted_when? %> </span> </li>
+	<% else %>
+		<li id="green"> <%= t.body %> </li>
+	<% end %>
+	</h3>
+	
+	<li id="blue"> <%= image_tag User.find(t.user_id).avatar.url, {width: 50, length: 50} %> by <%= link_to "@" + User.find(t.user_id).username %> </li>
+	<br />
+
+<% end %>
