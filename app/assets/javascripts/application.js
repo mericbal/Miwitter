@@ -25,7 +25,7 @@ $(document).on('turbolinks:load', function () {
 });
 
 $(document).on('turbolinks:load', function () {
-  $('#followers').show();
+  $('#tweets').show();
 
   $('.tabs li').on('click', function (e) {
     e.preventDefault();
